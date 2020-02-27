@@ -18,8 +18,10 @@
                         <div class="card-header">
                             <h4 class="card-title">
                                 List Product
-
-                                <a href="{{ route('product.create') }}" class="btn btn-primary btn-sm float-right">Tambah</a>
+                                <div class="float-right">
+                                    <a href="{{ route('product.bulk') }}" class="btn btn-danger btn-sm">Mass Upload</a>
+                                    <a href="{{ route('product.create') }}" class="btn btn-primary btn-sm float-right">Tambah</a>
+                                </div>
                             </h4>
                         </div>
                         <div class="card-body">
@@ -64,14 +66,14 @@
                                                 <label>Berat: <span class="badge badge-info">{{ $row->weight }} gr</span></label>
                                             </td>
                                             <td>Rp {{ number_format($row->price) }}</td>
-                                            <td>{{ $row->create_at->format('d-m-y') }}</td>
+                                            <td>{{ $row->created_at->format('d-m-Y') }}</td>
 
                                             <td>{!! $row->status_label !!}</td>
                                             <td>
                                                 <form action="{{ route('product.destroy', $row->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('category.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                                    <a href="{{ route('product.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                                     <button class="btn btn-danger btn-sm">Hapus</button>
                                                 </form>
                                             </td>
