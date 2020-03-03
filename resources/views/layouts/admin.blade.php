@@ -18,7 +18,7 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     @include('layouts.module.header')
   
-    <div class="app-body" id="dw">
+    <div class="app-body" id="dy">
         <div class="sidebar">
             @include('layouts.module.sidebar')
             <button class="sidebar-minimizer brand-minimizer" type="button"></button>
